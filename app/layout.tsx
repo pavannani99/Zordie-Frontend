@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { cn } from "@/lib/utils"
 import { ParticleBackground } from "@/components/particle-background"
 import { ThemeProvider } from "@/components/theme-provider"
+import {  ClerkProvider } from '@clerk/nextjs'
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
@@ -36,5 +38,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   )
 }

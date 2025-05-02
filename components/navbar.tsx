@@ -109,10 +109,12 @@ export function Navbar() {
 
         {/* Desktop CTA Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" className="gradient-border">
+          <Link href={"/sign-in"}>
+          <Button variant="outline" className="gradient-border cursor-pointer">
             Log In
           </Button>
-          <Button className="gradient-bg">Sign Up</Button>
+          </Link>
+          <Link href={"/sign-up"}><Button className="gradient-bg cursor-pointer">Sign Up</Button></Link>
         </div>
 
         {/* Mobile Menu Button */}
